@@ -6,7 +6,7 @@ const expireTime = "2h"; //token will expire in 2 hours
 const fs = require("fs");
 
 const User = function(user){
-    this.name = user.name;
+    this.names = user.names;
     this.lastname = user.lastname;
     this.username = user.username;
     this.password = user.password;
@@ -27,7 +27,7 @@ User.create = (newUser,result)=>{
 
 }
 User.loginModel = (account, result)=>{
-    sql.query("SELECT users.id, users.name, users.lastname, users.username, users.password, role.role_name FROM users INNER JOIN role ON users.role_id = role.id WHERE users.username = ?", 
+    sql.query("SELECT users.id, users.names, users.lastname, users.username, users.password, role.role_name FROM users INNER JOIN role ON users.role_id = role.id WHERE users.username = ?", 
     [account.username], (err, res)=>{
         if(err){
             console.log("err:" + err);

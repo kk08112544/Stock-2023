@@ -2,13 +2,13 @@ const User = require("../models/user.model")
 const bcrypt = require("bcryptjs");
 
 const createNewUser = (req, res)=>{
-    if(!req.body.name || !req.body.lastname || !req.body.username || !req.body.password || !req.body.confirm_password ){
+    if(!req.body.names || !req.body.lastname || !req.body.username || !req.body.password || !req.body.confirm_password ){
         res.status(400).send({message: "Content can not be empty."});
     }
     if(req.body.password==req.body.confirm_password){
         const salt = bcrypt.genSaltSync(10);
         const userObj = new User({
-            name: req.body.name,
+            names: req.body.names,
             lastname: req.body.lastname,
             username: req.body.username,
             password: bcrypt.hashSync(req.body.password, salt),
