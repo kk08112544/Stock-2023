@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: bmkq7d1eljz7mdgt4ije-mysql.services.clever-cloud.com:3306
--- Generation Time: Nov 16, 2023 at 07:08 AM
+-- Generation Time: Nov 17, 2023 at 06:01 AM
 -- Server version: 8.0.22-13
 -- PHP Version: 8.2.11
 
@@ -110,7 +110,7 @@ INSERT INTO `role` (`id`, `role_name`) VALUES
 
 CREATE TABLE `users` (
   `id` int NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `names` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -121,10 +121,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `lastname`, `username`, `password`, `role_id`) VALUES
-(1, 'Suwara', 'Songthong', 'user1', '$2a$10$GdgkfkHBd8hExIuWaY7rfu8pk1o6LCu8z075eC2SuOz9V29ynqNgu', 1),
-(2, 'Pharisi', 'Talee', 'user2', '$2a$10$YXIurOQiURSEvrfU12v7MecdwujcMff/2Mmt/G7E1GF/DVCEndudm', 2),
-(3, 'Kittipan', 'Sankoh', 'user3', '$2a$10$wCe7O4I6kRWzwcHuBx00duSH8q0UfIGluQ09XxhbXb8cJJafHkDXq', 2);
+INSERT INTO `users` (`id`, `names`, `lastname`, `username`, `password`, `role_id`) VALUES
+(1, 'Suwara', 'Songthong', 'user1', '$2a$10$FjfZw.PQkicxzVi3UQCYPeSbIMUoZJCrTeH3oLI95P1IllLA5pSiu', 1);
 
 --
 -- Indexes for dumped tables
@@ -204,7 +202,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
